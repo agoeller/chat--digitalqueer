@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> user chat </title>
+  </head>
+  <body>
+
+    <ul id="chats"></ul>
+    <input type="text" id="message">
+    <button id="submit">submit</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      var chats = document.querySelector('#chats');
+      var message = document.querySelector('#message');
+      var submit = document.querySelector('#submit');
+
+      submit.addEventListener('click',function(){
+        var li = document.createElement('li');
+        li.textContent = 'me: '+message.value;
+        chats.appendChild(li);
+        socket.emit('user-message',message.value);
+      });
+
+      socket.on('admin-message',function(msg){
+        var li = document.createElement('li');
+        li.textContent = 'admin: '+msg;
+        chats.appendChild(li);
+      });
+
+    </script>
+  </body>
+</html>
