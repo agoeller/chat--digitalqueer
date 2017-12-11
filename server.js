@@ -29,6 +29,7 @@ io.on('connection', function(socket){
     admin.emit('user-message',userMessage);
   });
 
+
   // admin sending a message to the user
   socket.on('admin-message',function(msg){
     io.sockets.connected[msg.id].emit('admin-message',msg.message);
