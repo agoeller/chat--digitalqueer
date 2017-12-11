@@ -6,13 +6,15 @@
   </head>
   <body>
       <div id="chat">
-        <form v-on:submit="send">
+          <ul id="chats"></ul>
           <div class="message" v-for="message in messages">
             {{ message }}
           </div>
-          <input id="message"/>
-          <button>SEND</button>
-      </form>
+
+          <form v-on:submit="send">
+              <input id="message" v-model="message" />
+              <button>SEND</button>
+          </form>
       </div>
 
 
@@ -66,7 +68,6 @@
                 li.textContent = 'me: '+message.value;
                 chats.appendChild(li);
                 socket.emit('user-message',message.value);
-                this.message = null;
               });
 
             }

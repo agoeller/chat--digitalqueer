@@ -5,39 +5,71 @@
     <title> admin chat </title>
   </head>
   <body>
+      <div id="chat">
+          <ul id="chats"></ul>
+          <div class="message" v-for="message in messages">
+            {{ message }}
+          </div>
 
-    <ul id="chats"></ul>
-    <input type="text" id="user-id">
-    <input type="text" id="message">
-    <button id="submit">submit</button>
+          <form v-on:submit="send">
+              <input type="text" id="user-id">
+              <input type="text" id="message" v-model="message">
+              <button>SEND</button>
+          </form>
+      </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
+    <script>
+        var userId = "userId.value";
+    </script>
+
     <script>
       var socket = io();
-
       var chats = document.querySelector('#chats');
       var userId = document.querySelector('#user-id');
       var message = document.querySelector('#message');
       var submit = document.querySelector('#submit');
 
-      submit.addEventListener('click',function(){
-        var li = document.createElement('li');
-        li.textContent = 'me: '+message.value;
-        chats.appendChild(li);
-
-        var userMessage = {id:userId.value, message:message.value }
-        socket.emit('admin-message',userMessage);
-      });
-
-      socket.on('user-message',function(msg){
-        var li = document.createElement('li');
-        li.textContent = msg.id + ': '+msg.message;
-        chats.appendChild(li);
-      });
-
-    </script>
 
 
-  </body>
-</html>
+
+
+      new Vue({
+        el: '#chat',
+
+        data: {
+            messages: [],
+            message: null
+        },
+
+        mounted: function() {
+
+          socket.on('user-message',function(msg){
+            var li = document.createElement('li');
+            li.textContent = msg.id + ': '+msg.message;
+            chats.appendChild(li);
+          });
+        },
+
+        methods: {
+            send: function(e) {
+              submit.addEventListener('click',function(){
+                var li = document.createElement('li');
+                li.textContent = 'me: '+message.value;
+                chats.appendChild(li);
+                var userMessage = {id:userId.value, message:message.value }
+                socket.emit('admin-message',userMessage);
+              });
+
+              }
+            }
+          });
+          </script>
+        </body>
+      </html>
