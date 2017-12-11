@@ -11,7 +11,12 @@
     <button id="submit">submit</button>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
+
+    // <div id="app">
+    //   <button v-on:click="message = 'New Message'">Change Message</button>
+
       var socket = io();
       var chats = document.querySelector('#chats');
       var message = document.querySelector('#message');
@@ -29,6 +34,7 @@
         li.textContent = 'admin: '+msg;
         chats.appendChild(li);
       });
+
 
     </script>
   </body>
