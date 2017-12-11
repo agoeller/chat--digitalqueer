@@ -27,12 +27,14 @@ io.on('connection', function(socket){
   socket.on('user-message',function(msg){
     var userMessage = { id:socket.id, message:msg };
     admin.emit('user-message',userMessage);
+    console.log('the message has been sent to admin');
   });
 
 
   // admin sending a message to the user
   socket.on('admin-message',function(msg){
     io.sockets.connected[msg.id].emit('admin-message',msg.message);
+      console.log('the message has been sent to user');
   });
 
   socket.on('disconnect',function(){
