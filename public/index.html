@@ -17,7 +17,7 @@
 
     <ul id="chats"></ul>
     <form action="" target="_blank">
-    <input id="m" autocomplete="off" /><button>Send</button>
+    <input id="message" autocomplete="off" /><button>Send</button>
     </form>
 
     <script src="/socket.io/socket.io.js"></script>
@@ -40,9 +40,9 @@
 
 //SEND MESSAGE
       $('form').submit(function(){
-        $('#chats').append($('<li>').text($('#m').val()))
-        socket.emit('user-message', $('#m').val());
-        $('#m').val('');
+        $('#chats').append($('<li>').text($('#message').val()))
+        socket.emit('user-message', $('#message').val());
+        $('#message').val('');
         return false;
         });
 

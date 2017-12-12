@@ -24,7 +24,7 @@
 
 
 //CLASS FOR CHAT WINDOW
-class ChatWindow{
+class ChatWindow {
   constructor( userId ){
     //CONSTRUCT HTML ELEMENT VARIABLES
     this.chats = document.createElement('ul');
@@ -43,7 +43,7 @@ class ChatWindow{
 
 //METHODs
     //EVENT LISTENER
-    this.submit.addEventListener('click',function(){
+    this.submit.addEventListener('click',()=>{
       var message = this.message.value;
       this.sendMessage(message);
     });
