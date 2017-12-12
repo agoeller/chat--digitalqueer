@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title> admin chat </title>
+    <style>
+      .chat-box {
+        border:1px solid #000000;
+        background:#cccccc;
+        padding:5px;
+        width: 310px;
+        display:inline-block;
+      }
+    </style>
   </head>
   <body>
     <script src="/socket.io/socket.io.js"></script>
@@ -25,38 +34,36 @@ class ChatWindow{
     this.userId = userId;
     //ADD UL TO PARENT DIV
     this.container = document.createElement('div');
+    this.container.className = 'chat-box';
     this.container.appendChild( this.chats );
     this.container.appendChild( this.message );
     this.container.appendChild( this.submit );
     //ADD PARENT DIV TO HTML BODY
     document.body.appendChild( this.container );
-  }
-}
+
+//METHODs
+    //EVENT LISTENER
+    this.submit.addEventListener('click',function(){
+      var li = document.createElement('li');
+      li.textContent = this.message.value;
+      this.chats.appendChild(li);
+    //SEND MESSAGE
+      var userMessage = {id:this.userId.value, message:this.message.value }
+    socket.emit('admin-message',userMessage);
+      });
+    }
+    //RECEIVE MESSAGE
+    socket.on('user-message',function(msg){
+      var li = document.createElement('li');
+      li.textContent = msg.id + ': '+msg.this.message;
+      this.chats.appendChild(li);
+      });
+    }
+
 
 //CREATE NEW WINDOW USING CLASS
-var cw = new ChatWindow('user123456789');
-
-
-//EVENT LISTENER
-      submit.addEventListener('click',function(){
-        var li = document.createElement('li');
-        li.textContent = message.value;
-        chats.appendChild(li);
-
-
-//SEND MESSAGE
-        var userMessage = {id:userId.value, message:message.value }
-        socket.emit('admin-message',userMessage);
-      });
-
-
-//RECEIVE MESSAGE
-      socket.on('user-message',function(msg){
-        var li = document.createElement('li');
-        li.textContent = msg.id + ': '+msg.message;
-        chats.appendChild(li);
-      });
-
+var cw1 = new ChatWindow('user123456789');
+var cw1 = new ChatWindow('user123456789');
 
     </script>
   </body>
