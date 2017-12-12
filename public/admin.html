@@ -17,7 +17,6 @@
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
     <script>
-    
       var socket = io();
 
 //HTML ELEMENT VARIABLES
@@ -26,10 +25,15 @@
       var submit = document.querySelector('#submit');
       var userId = document.querySelector('#user-id');
 
+//EVENT LISTENER
+      submit.addEventListener('click',function(){
+        var li = document.createElement('li');
+        li.textContent = message.value;
+        chats.appendChild(li);
 
 //SEND MESSAGE
-        var userMessage = {id:userId.value, message:message.value };
-      socket.emit('admin-message',userMessage);
+        var userMessage = {id:userId.value, message:message.value }
+        socket.emit('admin-message',userMessage);
       });
 
 
@@ -41,16 +45,10 @@
       });
 
 
-//EVENT LISTENER
-      submit.addEventListener('click',function(){
-        var li = document.createElement('li');
-        li.textContent = message.value;
-        chats.appendChild(li);
 
 
     </script>
   </body>
 </html>
 
-
-// AMDIN IS SENDING OUT MESSAGES TO USERS AND RECEIVING MESSAGES FROM USERS
+<!-- ADMIN IS SENDING OUT MESSAGES TO USERS AND RECEIVING MESSAGES FROM USERS -->
