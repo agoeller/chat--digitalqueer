@@ -39,10 +39,10 @@
       var submit = document.querySelector('#submit');
 
 
-      $('form').submit(function(msg2){
+      $('form').submit(function(){
         socket.emit('user-message', $('#m').val());
         $('#m').val('');
-        $('#chats').append($('<li>').text(msg2));
+        $('#chats').append($('<li>').text());
         return false;
       });
 
