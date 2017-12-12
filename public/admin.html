@@ -44,15 +44,27 @@ class ChatWindow{
 //METHODs
     //EVENT LISTENER
     this.submit.addEventListener('click',function(){
-      var li = document.createElement('li');
-      li.textContent = this.message.value;
-      this.chats.appendChild(li);
-    //SEND MESSAGE
-      var userMessage = {id:this.userId.value, message:this.message.value }
-    socket.emit('admin-message',userMessage);
-      });
-    }
+      var message = this.message.value;
+      this.sendMessage(message);
+    });
   }
+
+  createNewLiElement(usr,msg){
+    var li = document.createElement('li');
+    li.textContent = '@'+usr+': '+msg;
+    this.chats.appendChild(li);
+  }
+
+  receivedMessage(msg){
+    this.createNewLiElement(this.userId,msg);
+  }
+
+  sendMessage(msg){
+    var userMessage = { id:this.userId, message:this.message.value }
+    socket.emit('admin-message',userMessage);
+    this.createNewLiElement('digitalqueer',msg);
+  }
+}
 
 
 
@@ -65,13 +77,7 @@ socket.on('user-message',function(msg){
     chatWindows[msg.id] = new ChatWindow(msg.id);
   }
     chatWindows[msg.id].receivedMessage(msg.message);
-
-  var li = document.createElement('li');
-  li.textContent = msg.id + ': '+msg.message;
-  chats.appendChild(li);
 });
-
-
 
 
     </script>
