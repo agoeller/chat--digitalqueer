@@ -20,6 +20,7 @@ function isSocketAdmin(socket){
 }
 
 io.on('connection', function(socket){
+  console.log('a new user has connected ty');
 
   if( isSocketAdmin(socket) ) admin = socket;
 
