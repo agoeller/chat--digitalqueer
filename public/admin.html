@@ -5,12 +5,6 @@
     <title> admin chat </title>
   </head>
   <body>
-
-    <ul id="chats"></ul>
-    <input type="text" id="user-id">
-    <input type="text" id="message">
-    <button id="submit">submit</button>
-
     <script src="/socket.io/socket.io.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.2.1.js"
@@ -19,11 +13,28 @@
     <script>
       var socket = io();
 
-//HTML ELEMENT VARIABLES
-      var chats = document.querySelector('#chats');
-      var message = document.querySelector('#message');
-      var submit = document.querySelector('#submit');
-      var userId = document.querySelector('#user-id');
+
+//CLASS FOR CHAT WINDOW
+class ChatWindow{
+  constructor( userId ){
+    //CONSTRUCT HTML ELEMENT VARIABLES
+    this.chats = document.createElement('ul');
+    this.message = document.createElement('input');
+    this.submit = document.createElement('button');
+    this.submit.textContent = 'submit';
+    this.userId = userId;
+    //ADD UL TO PARENT DIV
+    this.container = document.createElement('div');
+    this.container.appendChild( this.chats );
+    this.container.appendChild( this.message );
+    this.container.appendChild( this.submit );
+    //ADD PARENT DIV TO HTML BODY
+    document.body.appendChild( this.container );
+  }
+}
+
+//CREATE NEW WINDOW USING CLASS
+var cw = new ChatWindow('user123456789');
 
 
 //EVENT LISTENER
