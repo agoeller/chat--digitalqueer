@@ -17,22 +17,23 @@
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
     <script>
+    
       var socket = io();
 
+//HTML ELEMENT VARIABLES
       var chats = document.querySelector('#chats');
-      var userId = document.querySelector('#user-id');
       var message = document.querySelector('#message');
       var submit = document.querySelector('#submit');
+      var userId = document.querySelector('#user-id');
 
-      submit.addEventListener('click',function(){
-        var li = document.createElement('li');
-        li.textContent = 'me: '+message.value;
-        chats.appendChild(li);
 
-        var userMessage = {id:userId.value, message:message.value }
-        socket.emit('admin-message',userMessage);
+//SEND MESSAGE
+        var userMessage = {id:userId.value, message:message.value };
+      socket.emit('admin-message',userMessage);
       });
 
+
+//RECEIVE MESSAGE
       socket.on('user-message',function(msg){
         var li = document.createElement('li');
         li.textContent = msg.id + ': '+msg.message;
@@ -40,8 +41,16 @@
       });
 
 
+//EVENT LISTENER
+      submit.addEventListener('click',function(){
+        var li = document.createElement('li');
+        li.textContent = message.value;
+        chats.appendChild(li);
+
+
     </script>
   </body>
 </html>
 
-<!-- sending messages to user -->
+
+// AMDIN IS SENDING OUT MESSAGES TO USERS AND RECEIVING MESSAGES FROM USERS
