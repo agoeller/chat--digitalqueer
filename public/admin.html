@@ -3,20 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title> admin chat </title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #chats { list-style-type: none; margin: 0; padding: 0; }
+      #chats li { padding: 5px 10px; }
+    </style>
   </head>
   <body>
 
     <ul id="chats"></ul>
+    <form action="" >
     <input type="text" id="user-id">
-    <input type="text" id="message">
-    <button id="submit">submit</button>
+    <input type="text" id="message"><button id="submit">submit</button>
+    </form>
 
-    <ul>
-      <li v-for="newMessage in message">{{ message }}</li>
-    </ul>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
     <script>
       var socket = io();
 
@@ -29,19 +40,27 @@
         var li = document.createElement('li');
         li.textContent = 'me: '+message.value;
         chats.appendChild(li);
-
         var userMessage = {id:userId.value, message:message.value }
         socket.emit('admin-message',userMessage);
       });
-
       socket.on('user-message',function(msg){
         var li = document.createElement('li');
         li.textContent = msg.id + ': '+msg.message;
         chats.appendChild(li);
       });
+    </script>
+
+
+
 
     </script>
 
 
   </body>
 </html>
+
+
+
+
+
+<!-- sending messages to user -->
