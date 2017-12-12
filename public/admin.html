@@ -25,11 +25,13 @@
       var submit = document.querySelector('#submit');
       var userId = document.querySelector('#user-id');
 
+
 //EVENT LISTENER
       submit.addEventListener('click',function(){
         var li = document.createElement('li');
         li.textContent = message.value;
         chats.appendChild(li);
+
 
 //SEND MESSAGE
         var userMessage = {id:userId.value, message:message.value }
@@ -43,8 +45,6 @@
         li.textContent = msg.id + ': '+msg.message;
         chats.appendChild(li);
       });
-
-
 
 
     </script>
