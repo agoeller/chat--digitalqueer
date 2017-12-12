@@ -18,7 +18,7 @@
     <ul id="chats"></ul>
     <form action="" >
     <input type="text" id="user-id">
-    <input type="text" id="message"><button id="submit">submit</button>
+    <input type="text" id="message" autocomplete="off" /><button>Send</button>
     </form>
 
 
@@ -29,31 +29,32 @@
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
     <script>
+    $(function () {
       var socket = io();
-
       var chats = document.querySelector('#chats');
       var userId = document.querySelector('#user-id');
       var message = document.querySelector('#message');
       var submit = document.querySelector('#submit');
 
-      submit.addEventListener('click',function(){
-        var li = document.createElement('li');
-        li.textContent = 'me: '+message.value;
-        chats.appendChild(li);
-        var userMessage = {id:userId.value, message:message.value }
+
+  $('form').submit(function(){
+        var userMessage = {id:userId.value, message: $('#message').val()}
         socket.emit('admin-message',userMessage);
+        $('#message').val('');
+        return false;
       });
+
+
       socket.on('user-message',function(msg){
-        var li = document.createElement('li');
-        li.textContent = msg.id + ': '+msg.message;
-        chats.appendChild(li);
-      });
+          $('#chats').append($('<li>').text(msg.id + ': '+msg.message));
+          window.scrollTo(0, document.body.scrollHeight);
+          });
+        });
     </script>
 
 
 
 
-    </script>
 
 
   </body>
