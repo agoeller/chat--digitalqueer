@@ -54,7 +54,7 @@ class ChatWindow {
     this.chats = document.createElement('ul');
     this.message = document.createElement('input');
     this.submit = document.createElement('button');
-    this.submit.textContent = 'submit';
+    this.submit.textContent = 'Submit~';
     this.userId = userId;
     //ADD UL TO PARENT DIV
     this.container = document.createElement('div');
@@ -71,7 +71,29 @@ class ChatWindow {
       var message = this.message.value;
       this.sendMessage(message);
     });
-  }
+
+    this.message.addEventListener("keypress", (event)=>{
+    if (event.keyCode == 13)
+        { event.preventDefault(); this.submit.click();}
+    });
+
+}
+
+
+
+  //
+  //   $(this.message).keyup(function(event) {
+  //     if (event.keyCode === 13) {
+  //         $(this.submit).click();
+  //     }
+  //   });
+  // }
+
+
+
+
+
+
 
   //APPEND LI TO UL
   createNewLiElement(usr,msg){
