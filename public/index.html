@@ -10,18 +10,18 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover; }
-      form { background: #000; padding: 3px; top: 50%;
+      form { padding: 3px; top: 50%;
             left: 50%;
-            top: 75%;
+            top: 80%;
             position: absolute;
             -webkit-transform: translate3d(-50%, -50%, 0);
             -moz-transform: translate3d(-50%, -50%, 0);
             transform: translate3d(-50%, -50%, 0); }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      form input { border: 0; padding: 10px; width: 100%; margin-right: .5%; font-family: "Courier New", Courier, serif; font-style: italic }
+      button { width: 100%; background: url(https://78.media.tumblr.com/06943d8472675414d709fe93b109aa02/tumblr_p0vlj0bnkV1ul31xto1_1280.jpg); border: none; padding: 10px; font-family: "Courier New", Courier, serif; font-weight: bold; font-size: 100% }
       #chats { list-style-type: none; margin: 0; padding: 0; }
       #chats li { padding: 5px 10px; }
-      #div { margin: auto; margin-top: 4cm; max-width: 25%; background: rgba(0, 0, 0, 0.5) }
+      #div { margin: auto; margin-top: 4cm; max-width: 25%; color: white; font-family: "Courier New", Courier, serif; font-size: 80% }
 
     </style>
   </head>
@@ -30,7 +30,7 @@
     <ul id="chats"></ul>
 
     <form id="theForm" action="" >
-    <input id="message" autocomplete="off" /><button>Send</button>
+    <input id="message" autocomplete="off" /><button>Send♡</button>
     </form>
   </div>
     <script src="/socket.io/socket.io.js"></script>
@@ -43,7 +43,6 @@
 
     <script>
 //FUNCTIONS
-
     $(function () {
       var socket = io();
       var chats = document.querySelector('#chats');
