@@ -53,7 +53,6 @@
         font-family: "Courier New", Courier, serif;
         font-size: 80%
       }
-
     </style>
   </head>
   <body>
@@ -81,7 +80,7 @@
       var submit = document.querySelector('#submit');
 
 
-//SEND MESSAGE
+      //SEND MESSAGE
       $('form').submit(function(){
         $('#chats').append($('<li>').text($('#message').val()))
         socket.emit('user-message', $('#message').val());
@@ -90,7 +89,7 @@
         });
 
 
-//RECEIVE MESSAGE
+      //RECEIVE MESSAGE
       socket.on('admin-message',function(msg){
         $('#chats').append($('<li>').text('@digitalqueer: ' + msg));
           window.scrollTo(0, document.body.scrollHeight);

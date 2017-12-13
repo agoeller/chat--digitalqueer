@@ -66,30 +66,34 @@ class ChatWindow {
     document.body.appendChild( this.container );
 
 //METHODS
-    //EVENT LISTENER
+    //EVENT LISTENER, SUBMIT ON CLICK
     this.submit.addEventListener('click',()=>{
       var message = this.message.value;
       this.sendMessage(message);
     });
   }
 
+  //APPEND LI TO UL
   createNewLiElement(usr,msg){
     var li = document.createElement('li');
     li.textContent = '@'+usr+': '+msg;
     this.chats.appendChild(li);
   }
 
+  //APPEND RECEIVED MESSAGES TO UL
   receivedMessage(msg){
     this.createNewLiElement(this.userId,msg);
   }
 
+  //SEND MESSAGE AND APPEND TO UL
   sendMessage(msg){
     var userMessage = { id:this.userId, message:this.message.value }
     socket.emit('admin-message',userMessage);
     this.createNewLiElement('digitalqueer',msg);
+    //THIS JQUERY FUNCTION CLEARS INPUT AFTER SUBMIT
+    $(this.message).val('');
   }
 }
-
 
 
 //CREATE NEW WINDOW USING CLASS
@@ -107,5 +111,6 @@ socket.on('user-message',function(msg){
     </script>
   </body>
 </html>
+
 
 <!-- ADMIN IS SENDING OUT MESSAGES TO USERS AND RECEIVING MESSAGES FROM USERS -->
