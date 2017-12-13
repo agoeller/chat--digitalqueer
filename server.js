@@ -7,6 +7,8 @@ var admin;
 //STATIC FILES
 app.use( express.static(__dirname+'/public') );
 
+//FOR THE BASIC SETUP OF THIS CODE I USED THE SOCKET.IO CHAT DEMO
+//https://socket.io/get-started/chat/
 
 //SOCKET FUNCTIONS
 function isSocketAdmin(socket){

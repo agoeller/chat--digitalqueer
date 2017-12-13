@@ -46,7 +46,7 @@
     <script>
       var socket = io();
 
-
+//TY TO NICK BRIZ FOR HELP CREATING THIS CLASS
 //CLASS FOR CHAT WINDOW
 class ChatWindow {
   constructor( userId ){
@@ -72,28 +72,14 @@ class ChatWindow {
       this.sendMessage(message);
     });
 
+    //TY TO icedwater AND unsynchronized FOR HELP WITH THIS EVENT LISTENER
+    //https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
+    //EVENT LISTENER, SUBMIT ON ENTER KEY
     this.message.addEventListener("keypress", (event)=>{
     if (event.keyCode == 13)
         { event.preventDefault(); this.submit.click();}
     });
-
-}
-
-
-
-  //
-  //   $(this.message).keyup(function(event) {
-  //     if (event.keyCode === 13) {
-  //         $(this.submit).click();
-  //     }
-  //   });
-  // }
-
-
-
-
-
-
+  }
 
   //APPEND LI TO UL
   createNewLiElement(usr,msg){

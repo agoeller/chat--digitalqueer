@@ -47,7 +47,7 @@
       #chats li { padding: 5px 10px; }
       #div {
         margin: auto;
-        margin-top: 4cm;
+        margin-top: 10%;
         max-width: 25%;
         color: white;
         font-family: "Courier New", Courier, serif;
@@ -58,7 +58,6 @@
   <body>
     <div id="div" align="center">
     <ul id="chats"></ul>
-
     <form id="theForm" action="" >
     <input id="message" autocomplete="off" /><button>Send ♡</button>
     </form>
@@ -70,8 +69,11 @@
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
 
-
     <script>
+
+//FOR THE BASIC SETUP OF THIS CODE I USED THE SOCKET.IO CHAT DEMO
+//https://socket.io/get-started/chat/
+
 //FUNCTIONS
     $(function () {
       var socket = io();
