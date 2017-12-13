@@ -6,10 +6,34 @@
     <style>
       .chat-box {
         border:1px solid #000000;
-        background:#cccccc;
+        background: url(https://78.media.tumblr.com/06943d8472675414d709fe93b109aa02/tumblr_p0vlj0bnkV1ul31xto1_1280.jpg);
+        margin: auto;
         padding:5px;
         width: 310px;
         display:inline-block;
+      }
+      ul {
+        list-style-type: none;
+        font-family: "Courier New", Courier, serif;
+        margin: auto;
+      }
+      input {
+        border: 0;
+        padding: 10px;
+        width: 93.5%;
+        margin-right: .5%;
+        font-family: "Courier New", Courier, serif;
+        font-style: italic
+      }
+      button {
+        width: 100%;
+        background: rgba(0,0,0,0.1);
+        border: none;
+        padding: 10px;
+        font-family: "Courier New", Courier, serif;
+      }
+      body {
+        background: url(https://78.media.tumblr.com/df9befc020e91900a4b003669a06b4a1/tumblr_p0vpdczGo91ul31xto1_1280.jpg)
       }
     </style>
   </head>
@@ -41,7 +65,7 @@ class ChatWindow {
     //ADD PARENT DIV TO HTML BODY
     document.body.appendChild( this.container );
 
-//METHODs
+//METHODS
     //EVENT LISTENER
     this.submit.addEventListener('click',()=>{
       var message = this.message.value;
