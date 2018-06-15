@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Chat with @digitalqueer </title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background: url(https://78.media.tumblr.com/55d31785abbb908b7fe32a19cc81d8e7/tumblr_p0tykgl2II1ul31xto1_1280.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      form {
+        padding: 3px;
+        top: 50%;
+        left: 50%;
+        top: 80%;
+        position: absolute;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+      }
+      form input {
+        border: 0;
+        padding: 10px;
+        width: 100%;
+        margin-right: .5%;
+        font-family: "Courier New", Courier, serif;
+        font-style: italic
+      }
+      button {
+        width: 100%;
+        background: url(https://78.media.tumblr.com/06943d8472675414d709fe93b109aa02/tumblr_p0vlj0bnkV1ul31xto1_1280.jpg);
+        border: none;
+        padding: 10px;
+        font-family: "Courier New", Courier, serif;
+        font-weight: bold;
+        font-size: 100%
+      }
+      #chats {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      #chats li { padding: 5px 10px; }
+      #div {
+        margin: auto;
+        margin-top: 10%;
+        max-width: 25%;
+        color: white;
+        font-family: "Courier New", Courier, serif;
+        font-size: 80%
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div" align="center">
+    <ul id="chats"></ul>
+    <form id="theForm" action="" >
+    <input id="message" autocomplete="off" /><button>Send ♡</button>
+    </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
+    <script>
+
+//FOR THE BASIC SETUP OF THIS CODE I USED THE SOCKET.IO CHAT DEMO
+//https://socket.io/get-started/chat/
+
+// OLD FUNCTIONS
+
+// $(function () {
+//   var socket = io();
+//   var chats = document.querySelector('#chats');
+//   var message = document.querySelector('#message');
+//   var submit = document.querySelector('#submit');
+//
+
+  // // OLD FUNCTIONS - SEND MESSAGE
+  // $('form').submit(function(){
+  //   $('#chats').append($('<li>').text($('#message').val()))
+  //   socket.emit('user-message', $('#message').val());
+  //   $('#message').val('');
+  //   return false;
+  //   });
+
+    //WORKING FUNCTIONS
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+    function myFunction() {
+        window.open("https://www.w3schools.com");
+    }
+
+
+    </script>
+  </body>
+</html>
+
+
+<!-- USER IS SENDING OUT MESSAGES TO ADMIN AND RECEIVING MESSAGES FROM ADMIN -->
