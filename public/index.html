@@ -22,20 +22,29 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
-  <!-- Favicon NOT WORKING
+  <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/dq_favicon.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: url(images/bgGrid.gif) no-repeat center center fixed;
+
+    /*For repeating background on mobile thanks to Vincent on Stack Overflow*/
+    body:before {
+      content: "";
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10%;
+      background: url(images/bgGrid.gif) no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-      height: 100%;
-      position: absolute;
     }
+
     button {
       width: 100%;
       background: url(https://78.media.tumblr.com/06943d8472675414d709fe93b109aa02/tumblr_p0vlj0bnkV1ul31xto1_1280.jpg);
@@ -46,13 +55,6 @@
       font-size: 100%
     }
 
-    .container {
-      padding: 5%;
-    }
-
-    .six columns {
-      align: center;
-    }
 
   </style>
 </head>
@@ -62,17 +64,17 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="six columns">
-      <a href="/anneli.html">
-      <img src="images/500ig.gif" width=90%>
+      <div class="one-half column">
+      <a href="/s3lf13_1.html">
+      <img src="images/500ig.gif" height=90% width=90%>
       </a>
-      <a href="/anneli.html">
-      <img src="images/s3lf13Admin.png" width=90%>
+      <a href="/s3lf13_1.html">
+      <img src="images/s3lf13Admin.png" height=90% width=90%>
       </a>
       </div>
-      <div class="six columns">
-      <img src="images/dqig.gif" width=90%>
-      <img src="images/dqAvatar.png" width=90%>
+      <div class="one-half column">
+      <img src="images/dqig.gif" height=90% width=90%>
+      <img src="images/dqAvatar.png" height=90% width=90%>
       </div>
     </div>
   </div>
@@ -84,7 +86,7 @@
 
 <script>
   function myFunction() {
-      location.replace("/anneli.html");
+      location.replace("/s3lf13_1.html");
   }
 </script>
 <!-- End Document
