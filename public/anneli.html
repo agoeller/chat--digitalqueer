@@ -32,6 +32,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      background-image: url(/images/concrete.png);
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -40,18 +41,25 @@
       position: absolute;
       font-family: 'Eagle Lake', cursive;
       }
-      .text-s3lf13{
-      width: 500px;
-      height: 500px;
+      .imgS3lf13{
+      /* width: 1080px;
+      height: 1800px;
       padding-top: 45%;
       padding-bottom: 45%;
       padding-left: 45%;
-      padding-right: 45%;
-      background: url(images/S3lf13Sml.png);
-      text-align: center;
-      font-size: 3em;
-      color: rgb(255, 255, 255);
+      padding-right: 45%; */
+      position: relative;
       }
+      .textS3lf13{
+        position: absolute;
+        padding-top: 35%;
+        top: 0;
+        text-align: center;
+        font-size: 6em;
+        font-size: italic;
+        color: rgba(255, 0, 110, 0.5);
+      }
+
 
       /*overflow:hidden;
       padding-bottom:56.25%;
@@ -78,9 +86,11 @@
   <div class="container">
     <div class="row">
       <div class="one-half column">
-        <a href="/images/s3lf13.html">
-          <div class="text-s3lf13" width=90%>
-          S3lf13s
+        <a href="/s3lf13.html">
+          <div class="imgS3lf13">
+          <img src="/images/S3lf13Sml.png" width=90%>
+          <div class="textS3lf13" width=90%>
+            S3lf13s
           </div>
         </a>
     </div>
