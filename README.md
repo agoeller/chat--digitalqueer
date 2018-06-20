@@ -1,12 +1,9 @@
-# chat--digitalqueer
-__Chat With Orchid the Avatar__
+# agSite
+__Anneli Goeller's Website__
 
-A net app to communicate with [@digitalqueer](https://www.instagram.com/digitalqueer/), AKA, Orchid the avatar.
-This is a private messaging web application where multiple users
-can send messages to one administrator, who can respond to them all.
+A website for my new media works[@S3lf13star](https://www.instagram.com/s3lf13star/) [@digitalqueer](https://www.instagram.com/digitalqueer/).
 
-Special thanks to Nick Briz, for many tutorials!!
+!!!IN PROGRESS!!!
 
 __Libraries:__
-[Socket.io](https://socket.io/),
 [jQuery](https://jquery.com/)
