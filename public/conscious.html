@@ -27,6 +27,10 @@
   <link rel="icon" type="image/png" href="images/dq_favicon.png">
 
   <script>
+  window.onload = function () {
+    var links = [ '<a href="/dq2">dq2</a>','<a href="/dq3">dq3</a>' ];
+  document.body.style.test = 'url(' + links[Math.floor(Math.random()*links.length)] + ')';
+    }
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,6 +43,15 @@
       height: 100%;
       position: absolute;
     }
+
+    a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+    a:hover {
+      color: rgba(255,0,0,0.5);
+      text-decoration: none;
+    }
     .five.columns{
       position:relative;
       margin-left: 0;
@@ -47,9 +60,13 @@
   </style>
 </head>
 <body>
+  <div class='test'>
+  </div>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <a href="/dq3.html"> ← 𝖕𝖗𝖊𝖛𝖎𝖔𝖚𝖘
+  </a>
   <div class="container">
     <div class="row">
       <div class="twelve columns">
