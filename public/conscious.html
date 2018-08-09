@@ -27,10 +27,15 @@
   <link rel="icon" type="image/png" href="images/dq_favicon.png">
 
   <script>
-  window.onload = function () {
-    var links = [ '<a href="/dq2">dq2</a>','<a href="/dq3">dq3</a>' ];
-  document.body.style.test = 'url(' + links[Math.floor(Math.random()*links.length)] + ')';
-    }
+  function random_3(){
+    var randomLinks=Math.round(Math.random()*1)
+    var link1="/dq2.html"
+    var link2="/dq3.html"
+    if (randomLinks==0)
+        window.location=link1
+    else if (randomLinks==1)
+        window.location=link2
+  }
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,12 +50,22 @@
     }
 
     a {
-      color: rgba(255,255,255,0.5);
+      color: rgba(0,0,0,0.2);
       text-decoration: none;
     }
     a:hover {
       color: rgba(255,0,0,0.5);
       text-decoration: none;
+    }
+    input[type=button] {
+        border: none;
+        color: rgba(0,0,0,0.2);
+        text-decoration: none;
+    }
+    input:hover[type=button] {
+        border: none;
+        color: rgba(255,0,0,0.5);
+        text-decoration: none;
     }
     .five.columns{
       position:relative;
@@ -60,13 +75,11 @@
   </style>
 </head>
 <body>
-  <div class='test'>
-  </div>
-
+  <form>
+  <input type="button" value= "← 𝖕𝖗𝖊𝖛𝖎𝖔𝖚𝖘" onClick="random_3()">
+  </form>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <a href="/dq3.html"> ← 𝖕𝖗𝖊𝖛𝖎𝖔𝖚𝖘
-  </a>
   <div class="container">
     <div class="row">
       <div class="twelve columns">
@@ -84,7 +97,8 @@
       </div>
     </div>
   </div>
-
+  <a href="/"> ⌂ 𝖍𝖔𝖒𝖊
+  </a>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
