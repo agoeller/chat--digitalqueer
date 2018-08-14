@@ -28,6 +28,26 @@
   <link rel="icon" type="image/png" href="images/dq_favicon.png">
 
   <script>
+      window.onload = function () {
+        var images = [
+          'images/ss/1.gif',
+          'images/ss/2.gif',
+          'images/ss/3.gif',
+          'images/ss/4.gif',
+          'images/ss/5.gif',
+          'images/ss/6.gif',
+          'images/ss/7.gif',
+          'images/ss/8.gif',
+          'images/ss/9.gif',
+          'images/ss/10.gif',
+          'images/ss/11.gif',
+          'images/ss/12.gif',
+          'images/ss/13.gif',
+          'images/ss/14.gif',
+          'images/ss/15.gif',
+        ];
+          document.getElementById("ss").style.backgroundImage = 'url(' + images[Math.floor(Math.random()*images.length)] + ')';
+        }
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,10 +92,15 @@
       .flowr{
         padding-top: 20%;
       }
+      #ss{
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
     </style>
 </head>
 <body>
-
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <p>
@@ -92,51 +117,61 @@
   </p>
   <div class="container">
     <div class="row">
-      <div class="one-third column">
-        <a href="/s3lf13.html">
-          <img src="/images/S3lf13Sml.png" height=90% width=90%>
-          <!-- <div class="textS3lf13" height=90% width=90%>
-            S3lf13s
-          </div> -->
-        </a>
-      </div>
-      <div class="one-third column">
+      <div class="four columns">
         <a href="http://thewrngwtr.online/viewer.php?artist=anneligoeller">
           <img class="flowr" src="/images/0ceanflowr.png" height=90% width=90%>
-          <!-- <div class="textflowr" height=90% width=90%>
-            0ceanFlowr
-          </div> -->
         </a>
       </div>
-      <div class="one-third column">
+      <div class="four columns">
+        <a href="/s3lf13.html">
+          <img src="/images/S3lf13Sml.png" height=80% width=80%>
+        </a>
+      </div>
+      <div class="four columns">
         <a href="/flowrpowr.html">
           <img src="/images/flowrPowr.png" height=90% width=90%>
         </a>
       </div>
-      <div class="one-third column">
-        <br>
-        <br>
+      <div class="four columns">
         <a href="/coolday.html">
           <img src="/images/coolDay.png" height=90% width=90%>
         </a>
       </div>
-      <div class="one-third column">
-        <br>
-        <br>
+      <div class="four columns">
         <a href="/lightflower.html">
           <img src="/images/lightFlower.png" height=90% width=90%>
         </a>
       </div>
-      <div class="one-third column">
-        <br>
-        <br>
+      <div class="four columns">
         <a href="/sweetsky.html">
           <img src="/images/sweetSky.png" height=90% width=90%>
         </a>
       </div>
+      <div class="four columns">
+        <a href="/glitternightc.html">
+          <img src="/images/glitterNightC.png" height=90% width=90%>
+        </a>
+      </div>
+      <div class="four columns">
+        <a href="/weirdwater.html">
+          <img src="/images/weirdWater.png" height=90% width=90%>
+        </a>
+      </div>
+      <div class="three columns">
+        <a href="/soaringsky.html">
+          <div id="ss">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
