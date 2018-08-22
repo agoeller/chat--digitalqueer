@@ -35,10 +35,13 @@
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+      background-repeat: no-repeat;
       background-image: url(/images/ss/soaringSkyBg.gif);
-      height: 100%;
+      height: 125%;
+      width: 100%;
       position: absolute;
       font-family: 'Eagle Lake', cursive;
+      cursor: url(/images/ssCursor.png), pointer;
       }
       a {
         color: rgba(255,255,255,0.8);
@@ -47,11 +50,35 @@
       a:hover {
         color: rgba(0,0,0,0.5);
         text-decoration: none;
+        cursor: url(/images/ssCursorHover.png), pointer;
       }
-      .soaringSky {
-        color: rgba(255,255,255,0.5);
-        background-color: rgba(0,0,0,0.1);
-        width: 440px;
+      #soaringSky {
+        color: rgba(0,0,0,0.8);
+        background-image: url(/images/concrete.png);
+        width: 340px;
+      }
+      #soaringSky a {
+        color: rgba(255,0,0,0.8);
+        font-weight: 900;
+        font-size: 1.05em;
+      }
+      #soaringSky a:hover {
+        color: rgba(255,0,0,0.3);
+      }
+      .offset-by-eleven.columns {
+        width: 140px;
+      }
+      .offset-by-two.columns {
+        width: 780px;
+      }
+      .offset-by-three.columns {
+        width: 710px;
+      }
+      .offset-by-six.columns {
+        width: 340px;
+      }
+      .offset-by-seven.columns {
+        width: 240px;
       }
     </style>
 </head>
@@ -115,7 +142,7 @@
               </div>
             </div>
           </div>
-          <div class="soaringSky">
+          <div id="soaringSky">
               <i>Soaring Sky</i>, 2016, Animated GIF
               <br>
               Featured in <a href="http://glitch.peripheralforms.com/"> Glitch

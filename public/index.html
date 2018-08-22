@@ -28,6 +28,9 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     /*For repeating background on mobile thanks to Vincent on Stack Overflow*/
+    body {
+      cursor: url(/images/indexCursor.png), pointer;
+    }
     body:before {
       content: "";
       display: block;
@@ -43,6 +46,12 @@
       -o-background-size: cover;
       background-size: cover;
     }
+    #ss a{
+      cursor: url(/images/ssCursor.png), pointer;
+    }
+    #dq a{
+      cursor: url(/images/dqCursor.png), pointer;
+    }
   </style>
 </head>
 <body>
@@ -52,20 +61,24 @@
   <div class="container">
     <div class="row">
       <div class="one-half column">
-      <a href="/q1.html">
-      <img src="images/500ig.gif" height=90% width=90%>
-      </a>
-      <a href="/q1.html">
-      <img src="images/s3lf13Admin.png" height=90% width=90%>
-      </a>
+        <div id="ss">
+        <a href="/q1.html">
+        <img src="images/500ig.gif" height=90% width=90%>
+        </a>
+        <a href="/q1.html">
+        <img src="images/s3lf13Admin.png" height=90% width=90%>
+        </a>
+        </div>
       </div>
       <div class="one-half column">
-      <a href="/dq1.html">
-      <img src="images/dqig.gif" height=90% width=90%>
-      </a>
-      <a href="/dq1.html">
-      <img src="images/dqAvatar.png" height=90% width=90%>
-      </a>
+        <div id="dq">
+        <a href="/dq1.html">
+        <img src="images/dqig.gif" height=90% width=90%>
+        </a>
+        <a href="/dq1.html">
+        <img src="images/dqAvatar.png" height=90% width=90%>
+        </a>
+        </div>
       </div>
     </div>
   </div>

@@ -31,6 +31,9 @@
     function myFunction() {
         location.replace("/anneli.html");
     }
+    function myRefresh() {
+        location.replace("/q1.html");
+    }
 
       window.onload = function () {
         var images = [
@@ -174,6 +177,14 @@
           'images/s3lf13/137.png',
           'images/s3lf13/138.png',
           'images/s3lf13/139.png',
+          'images/s3lf13/140.png',
+          'images/s3lf13/141.png',
+          'images/s3lf13/142.png',
+          'images/s3lf13/143.png',
+          'images/s3lf13/144.png',
+          'images/s3lf13/145.png',
+          'images/s3lf13/146.png',
+          'images/s3lf13/147.png',
         ];
       document.body.style.backgroundImage = 'url(' + images[Math.floor(Math.random()*images.length)] + ')';
         }
@@ -182,12 +193,10 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      /*-webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;*/
-      height: 100px;
+      height: 100%;
+      width: 100%;
       position: absolute;
+      cursor: url(/images/ssCursor.png), pointer;
     }
     a {
       color: rgba(255,255,255,0.5);
@@ -196,6 +205,7 @@
     a:hover {
       color: rgba(255,0,0,0.5);
       text-decoration: none;
+      cursor: url(/images/ssCursorHover.png), pointer;
     }
     .imgBg{
       background: url(https://78.media.tumblr.com/06943d8472675414d709fe93b109aa02/tumblr_p0vlj0bnkV1ul31xto1_1280.jpg);
@@ -205,13 +215,46 @@
     .offset-by-two.column{
       padding-top: 20%;
     }
-    button {
-      background: url(https://78.media.tumblr.com/06943d8472675414d709fe93b109aa02/tumblr_p0vlj0bnkV1ul31xto1_1280.jpg);
+    .button1 {
+      background: url(/images/marble.jpg);
       font-family: 'Eagle Lake', cursive;
       font-weight: bold;
-      font-size: 100%
+      font-size: 100%;
+      cursor: url(/images/ssCursorHover.png), pointer;
+      border: none;
     }
-
+    .button1:hover {
+      background: url(/images/marblePink.png);
+      border: none;
+    }
+    .button2 {
+      background: url(/images/marble.png);
+      font-family: 'Eagle Lake', cursive;
+      font-size: 100%;
+      text-transform: lowercase;
+      color: rgb(0, 0, 0);
+      cursor: url(/images/ssCursorHover.png), pointer;
+      border: none;
+      width: 190px;
+      height: 20px;
+      font-size: 8px;
+      line-height: 8px;
+    }
+    .button2:hover {
+      background: none;
+      border: none;
+    }
+    .offset-by-two.column {
+      width: 680px;
+    }
+    .offset-by-one.column {
+      width: 950px;
+    }
+    .offset-by-four.column {
+      padding-top: 180px;
+      width: 520px;
+      height: 200px;
+    }
   </style>
 </head>
 <body>
@@ -232,19 +275,20 @@
           <img src="/images/howoften.png" width=90%>
         </div>
       <div class="offset-by-two column">
-      <button onclick="myFunction()">♡1</button>
-      <button onclick="myFunction()">♡2</button>
-      <button onclick="myFunction()">♡3</button>
-      <button onclick="myFunction()">♡4</button>
-      <button onclick="myFunction()">♡5</button>
-      <button onclick="myFunction()">♡6</button>
-      <button onclick="myFunction()">♡7</button>
+        <button class="button button1" onclick="myFunction()">♡1</button>
+        <button class="button button1" onclick="myFunction()">♡2</button>
+        <button class="button button1" onclick="myFunction()">♡3</button>
+        <button class="button button1" onclick="myFunction()">♡4</button>
+        <button class="button button1" onclick="myFunction()">♡5</button>
+        <button class="button button1" onclick="myFunction()">♡6</button>
+        <button class="button button1" onclick="myFunction()">♡7</button>
+      </div>
+      <div class="offset-by-four column">
+        <button class="button button2" onclick="myRefresh()"><i>click 4 more s3lf13s ;-)</i></button>
       </div>
       </div>
       </div>
     </div>
-  </div>
-
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
